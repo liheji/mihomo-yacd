@@ -1,0 +1,32 @@
+.header {
+  margin-bottom: 12px;
+}
+
+.group {
+  padding: 10px;
+  background-color: var(--color-bg-card);
+  border-radius: 10px;
+  box-shadow: 0 1px 5px rgba(0, 0, 0, 0.1);
+}
+
+.zapWrapper {
+  width: 20px;
+  height: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.arrow {
+  display: inline-flex;
+  transform: rotate(0deg);
+  transition: transform 0.3s;
+
+  &.isOpen {
+    transform: rotate(180deg);
+  }
+
+  &:focus {
+    outline: var(--color-focus-blue) solid 1px;
+  }
+}

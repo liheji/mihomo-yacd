@@ -1,0 +1,15 @@
+@import '~/styles/utils/custom-media';
+
+.header {
+  display: grid;
+  grid-template-columns: 1fr minmax(auto, 290px);
+  align-items: center;
+  padding-right: 15px;
+}
+
+.RuleProviderItemWrapper {
+  padding: 6px 15px;
+  @media (--breakpoint-not-small) {
+    padding: 10px 40px;
+  }
+}

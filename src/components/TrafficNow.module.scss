@@ -1,0 +1,45 @@
+.TrafficNow {
+  color: var(--color-text);
+  align-items: center;
+  flex-wrap: wrap;
+
+  display: grid;
+  grid-gap: 10px;
+  grid-template-columns: 90%;
+  /* 当屏幕宽度大于300像素时，设置为一行两列 */
+  @media only screen and (min-width: 300px) {
+    grid-template-columns: 49% 49%;
+  }
+
+  /* 当屏幕宽度大于600像素时，设置为一行三列 */
+  @media only screen and (min-width: 600px) {
+    grid-template-columns: repeat(auto-fill, 32%);
+  }
+  /* 当屏幕宽度大于1000像素时，设置为一行四列 */
+  @media only screen and (min-width: 1000px) {
+    grid-template-columns: repeat(auto-fill, 24%);
+  }
+  /* 当屏幕宽度大于1000像素时，设置为一行四列 */
+  @media only screen and (min-width: 1200px) {
+    grid-template-columns: repeat(auto-fill, 15%);
+  }
+  justify-content: space-between;
+
+  .sec {
+    padding: 10px;
+    background-color: var(--color-bg-card);
+    border-radius: 10px;
+    box-shadow: 0px 1px 5px rgba(0, 0, 0, 0.1);
+    div:nth-child(1) {
+      color: var(--color-text-secondary);
+      font-size: 0.7em;
+    }
+    div:nth-child(2) {
+      padding: 10px 0 0;
+      font-size: 1.2em;
+      @media only screen and (min-width: 720px) {
+        font-size: 1.1em;
+      }
+    }
+  }
+}

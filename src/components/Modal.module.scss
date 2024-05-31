@@ -1,0 +1,20 @@
+.overlay {
+  position: fixed;
+  top: 0;
+  right: 0;
+  left: 0;
+  bottom: 0;
+  background: #444;
+  z-index: 1024;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.content {
+  outline: none;
+  color: var(--color-text);
+  background: #444;
+  padding: 20px;
+  border-radius: 10px;
+}

@@ -1,0 +1,105 @@
+@import '~/styles/utils/custom-media';
+
+.proxy {
+  padding: 5px;
+  position: relative;
+  border-radius: 8px;
+  overflow: hidden;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+
+  outline: var(--color-proxy-border) 1px outset;
+  border: 2px solid transparent;
+
+  &:focus {
+    border-color: var(--color-focus-blue);
+  }
+
+  @media (--breakpoint-not-small) {
+    border-radius: 10px;
+    padding: 10px;
+  }
+
+  background-color: var(--color-bg-proxy);
+
+  &.now {
+    background-color: var(--color-focus-blue);
+    color: #ddd;
+  }
+
+  &.error {
+    opacity: 0.5;
+  }
+  &.selectable {
+    transition: transform 0.2s ease-in-out;
+    cursor: pointer;
+    &:hover {
+      border-color: var(--card-hover-border-lightness);
+    }
+  }
+}
+
+.proxyType {
+  font-family: var(--font-mono);
+  font-size: 0.6em;
+  @media (--breakpoint-not-small) {
+    font-size: 0.7em;
+  }
+}
+.udpType {
+  font-family: var(--font-mono);
+  font-size: 0.6em;
+  margin-right: 3px;
+  @media (--breakpoint-not-small) {
+    font-size: 0.7em;
+  }
+}
+.tfoType {
+  padding: 2px;
+}
+.row {
+  display: flex;
+  align-items: center;
+  height: auto;
+  font-weight: 400;
+  justify-content: space-between;
+}
+
+.proxyName {
+  width: 100%;
+  margin-bottom: 5px;
+  font-size: 0.75em;
+  @media (--breakpoint-not-small) {
+    font-size: 0.85em;
+  }
+}
+
+.proxySmall {
+  position: relative;
+  width: 15px;
+  height: 15px;
+  border-radius: 50%;
+
+  .now {
+    position: absolute;
+    width: 9px;
+    height: 9px;
+    margin: auto;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    border-radius: 50%;
+    background-color: rgb(255, 253, 253);
+  }
+
+  &.selectable {
+    transition: transform 0.1s ease-in-out;
+    cursor: pointer;
+    &:hover {
+      transform: scale(1.5);
+    }
+  }
+}

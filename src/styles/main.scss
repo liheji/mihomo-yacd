@@ -1,0 +1,235 @@
+@import '@fontsource/inter/latin-400.css';
+@import '@fontsource/inter/latin-800.css';
+@import '@fontsource/roboto-mono/latin-400.css';
+@import 'modern-normalize/modern-normalize.css';
+
+@font-face {
+  font-family: '_Twemoji Mozilla';
+  src: url('../../assets/Twemoji_Mozilla.ttf') format('truetype');
+}
+
+.relative {
+  position: relative;
+}
+
+.border-left,
+.border-top,
+.border-bottom {
+  position: relative;
+}
+
+%border {
+  position: absolute;
+  content: '';
+  height: 1px;
+  width: 100%;
+  transform: scaleY(0.5) translateZ(0);
+  left: 0;
+  right: 0;
+  background: #555;
+}
+
+%border1 {
+  position: absolute;
+  content: '';
+  height: 100%;
+  width: 1px;
+  transform: scaleX(0.5) translateZ(0);
+  top: 0;
+  bottom: 0;
+  background: #555;
+}
+
+.border-top::before {
+  @extend %border;
+  top: 0;
+}
+
+.border-bottom::after {
+  @extend %border;
+  bottom: 0;
+}
+
+.border-left::before {
+  @extend %border1;
+  left: 0;
+}
+
+*,
+*:before,
+*:after {
+  box-sizing: border-box;
+}
+
+:root {
+  --font-mono: 'Roboto Mono', Menlo, monospace;
+  // prettier-ignore
+  --font-normal: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji",  "Source Han Sans", "PingFang SC", "Microsoft YaHei" , "微软雅黑", Arial,"Twemoji Mozilla", "_Twemoji Mozilla","Segoe UI Emoji", "Segoe UI Symbol";
+}
+
+body {
+  font-family: var(--font-normal);
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+  -webkit-text-size-adjust: 100%;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+
+  ::-webkit-scrollbar {
+    z-index: 11;
+    background: transparent;
+
+    &-thumb {
+      border-radius: 5px;
+      background: #306081;
+    }
+  }
+
+  ::-webkit-scrollbar:vertical {
+    width: 6px;
+  }
+
+  ::-webkit-scrollbar:horizontal {
+    height: 6px;
+  }
+
+  margin: 0;
+  padding: 0;
+}
+
+@mixin dark {
+  --color-background: #202020;
+  --color-background2: rgba(32, 32, 32, 0.3);
+  --color-bg-chart: #24292f;
+  --color-bg-card: #24292f;
+  --color-focus-blue: #306081;
+  --btn-bg: #24292f;
+  --color-proxy-border: #00000000;
+  --card-hover-border-lightness: #306081;
+  --color-text: #ddd;
+  --color-text-secondary: #ccc;
+  --color-text-highlight: #fff;
+  --color-bg-sidebar: #24292f;
+  --color-sb-active-row-bg: #30363d;
+  --color-sb-active-row-font: #eee;
+  --color-input-bg: #2d2d30;
+  --color-input-border: #3f3f3f;
+  --color-toggle-bg: #353535;
+  --color-toggle-selected: #181818;
+  --color-icon: #c7c7c7;
+  --color-separator: #333;
+  --color-btn-bg: #232323;
+  --color-btn-fg: #bebebe;
+  --color-bg-proxy: #202020;
+  --color-row-odd: #282828;
+  --bg-log-info-tag: #454545;
+  --bg-modal: #1f1f20;
+  --bg-near-transparent: rgba(255, 255, 255, 0.1);
+  --bg-tooltip: #111;
+  --bc-tooltip: #555;
+  --select-border-color: #040404;
+  --select-bg-hover: url(data:image/svg+xml,%0A%20%20%20%20%3Csvg%20width%3D%228%22%20height%3D%2224%22%20viewBox%3D%220%200%208%2024%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%20%20%20%20%20%20%3Cpath%20d%3D%22M4%207L7%2011H1L4%207Z%22%20fill%3D%22%23ffffff%22%20%2F%3E%0A%20%20%20%20%20%20%3Cpath%20d%3D%22M4%2017L1%2013L7%2013L4%2017Z%22%20fill%3D%22%23ffffff%22%20%2F%3E%0A%20%20%20%20%3C%2Fsvg%3E%0A%20%20);
+  --bg-log-info-card: #24292f;
+}
+
+@mixin light {
+  --color-background: #eee;
+  --color-background2: rgba(240, 240, 240, 0.3);
+  --color-bg-chart: rgb(245, 245, 245);
+  --color-bg-card: rgb(245, 245, 245);
+  --color-focus-blue: #005caf;
+  --btn-bg: #005caf;
+  --color-proxy-border: #cccccc3b;
+  --card-hover-border-lightness: #005caf;
+  --color-text: #222;
+  --color-text-secondary: #646464;
+  --color-text-highlight: #040404;
+  --color-bg-sidebar: #cbcbcb2f;
+  --color-sb-active-row-bg: #005caf;
+  --color-sb-active-row-font: #040404;
+  @media only screen and (min-width: 769px) {
+    --color-sb-active-row-font: #eee;
+  }
+  --color-input-bg: #f0f0f0;
+  --color-input-border: #c0c0c0;
+  --color-toggle-bg: #ffffff80;
+  --color-toggle-selected: #d7d7d7;
+  --color-icon: #5b5b5b;
+  --color-separator: #ccc;
+  --color-btn-bg: #f4f4f4;
+  --color-btn-fg: #000000;
+  --color-bg-proxy: #dbdbdb56;
+  --color-row-odd: #f5f5f5;
+  --bg-log-info-tag: #888;
+  --bg-modal: #fbfbfb;
+  --bg-near-transparent: rgba(0, 0, 0, 0.1);
+  --bg-tooltip: #f0f0f0;
+  --bc-tooltip: #ccc;
+  --select-border-color: #999999;
+  --select-bg-hover: url(data:image/svg+xml,%0A%20%20%20%20%3Csvg%20width%3D%228%22%20height%3D%2224%22%20viewBox%3D%220%200%208%2024%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%20%20%20%20%20%20%3Cpath%20d%3D%22M4%207L7%2011H1L4%207Z%22%20fill%3D%22%23222222%22%20%2F%3E%0A%20%20%20%20%20%20%3Cpath%20d%3D%22M4%2017L1%2013L7%2013L4%2017Z%22%20fill%3D%22%23222222%22%20%2F%3E%0A%20%20%20%20%3C%2Fsvg%3E%0A%20%20);
+  --bg-log-info-card: #e3e3e351;
+}
+
+:root[data-theme='auto'] {
+  @media (prefers-color-scheme: dark) {
+    @include dark;
+    color-scheme: dark;
+  }
+
+  @media (prefers-color-scheme: light) {
+    @include light;
+    color-scheme: light;
+  }
+}
+
+:root[data-theme='dark'] {
+  @include dark;
+  color-scheme: dark;
+}
+
+:root[data-theme='light'] {
+  @include light;
+  color-scheme: light;
+}
+
+.flexCenter {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.fabgrp {
+  position: fixed;
+  z-index: 3;
+  right: 20px;
+  bottom: 20px;
+}
+
+.visually-hidden {
+  position: absolute;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  border: 0;
+  padding: 0;
+}
+
+/**** @reach/tooltip/styles.css ****/
+:root {
+  --reach-tooltip: 1;
+}
+
+[data-reach-tooltip] {
+  z-index: 1;
+  pointer-events: none;
+  position: absolute;
+  padding: 0.25em 0.5em;
+  box-shadow: 2px 2px 10px hsla(0, 0%, 0%, 0.1);
+  white-space: nowrap;
+  font-size: 85%;
+  background: var(--bg-tooltip);
+  color: var(--color-text);
+  border: solid 1px var(--bc-tooltip);
+  border-radius: 4px;
+}

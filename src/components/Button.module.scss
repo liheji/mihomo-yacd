@@ -1,0 +1,72 @@
+@import '~/styles/utils/custom-media';
+
+.btn {
+  -webkit-appearance: none;
+  outline: none;
+  user-select: none;
+  position: relative;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--color-btn-fg);
+  background: var(--color-btn-bg);
+  border: 1px solid #555;
+  border-radius: 100px;
+  &:focus {
+    border-color: var(--color-focus-blue);
+  }
+  &:hover {
+    color: #fff;
+    background: var(--color-focus-blue);
+    border: 1px solid var(--color-focus-blue);
+  }
+  &:active {
+    transform: scale(0.97);
+  }
+
+  font-size: 0.75em;
+  padding: 4px 7px;
+  @media (--breakpoint-not-small) {
+    font-size: small;
+    padding: 6px 12px;
+  }
+
+  &.minimal {
+    border-color: transparent;
+    background: none;
+    &:focus {
+      border-color: var(--color-focus-blue);
+    }
+    &:hover {
+      color: #fff;
+      background: var(--color-focus-blue);
+      border: 1px solid var(--color-focus-blue);
+    }
+  }
+}
+
+.btn:disabled {
+  opacity: 0.5;
+}
+
+.btnInternal {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  column-gap: 4px;
+}
+
+.btnStart {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.loadingContainer {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  display: inline-flex;
+}

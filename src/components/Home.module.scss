@@ -1,0 +1,25 @@
+@import '~/styles/utils/custom-media';
+
+.root {
+  padding: 6px 15px;
+  @media screen and (min-width: 30em) {
+    padding: 10px 40px;
+  }
+}
+.chart {
+  margin-top: 25px;
+  height: 50vh;
+  @media only screen and (min-width: 600px) {
+    height: 55vh;
+  }
+  @media only screen and (min-width: 768px) {
+    height: 60vh;
+  }
+  @media only screen and (min-width: 1200px) {
+    height: 75vh;
+  }
+  display: grid;
+  grid-gap: 20px;
+  grid-template-columns: 100%;
+  justify-content: space-around;
+}

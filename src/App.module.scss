@@ -1,0 +1,20 @@
+.app {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+
+  display: flex;
+  background: var(--color-background);
+  color: var(--color-text);
+
+  @media (max-width: 768px) {
+    flex-direction: column;
+  }
+}
+
+.content {
+  flex-grow: 1;
+  overflow-y: auto;
+}

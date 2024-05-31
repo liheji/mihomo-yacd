@@ -1,0 +1,75 @@
+.logMeta {
+  font-size: 0.8em;
+  margin-bottom: 5px;
+  display: block;
+  line-height: 1.55em;
+}
+
+.logType {
+  flex-shrink: 0;
+  text-align: center;
+  width: 66px;
+  border-radius: 100px;
+  padding: 3px 5px;
+  margin: 0 8px;
+}
+
+.logTime {
+  flex-shrink: 0;
+  color: #fb923c;
+}
+
+.logText {
+  flex-shrink: 0;
+  color: #888;
+  align-items: center;
+  line-height: 1.35em;
+  /* force wrap */
+  width: 100%;
+  @media (max-width: 768px) {
+    display: inline-block;
+  }
+}
+
+/*******************/
+
+.logsWrapper {
+  margin: 45px;
+  padding: 10px;
+  background-color: var(--bg-log-info-card);
+  border-radius: 4px;
+  color: var(--color-text);
+  overflow-y: auto;
+  @media (max-width: 768px) {
+    margin: 25px;
+  }
+  :global {
+    .log {
+      margin-bottom: 10px;
+      //background: var(--color-background);
+    }
+    .log.even {
+      //background: var(--color-background);
+    }
+  }
+}
+
+/*******************/
+
+.logPlaceholder {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  color: #2d2d30;
+
+  div:nth-child(2) {
+    color: var(--color-text-secondary);
+    font-size: 1.4em;
+    opacity: 0.6;
+  }
+}
+
+.logPlaceholderIcon {
+  opacity: 0.3;
+}

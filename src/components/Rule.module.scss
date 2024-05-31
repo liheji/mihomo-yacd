@@ -1,0 +1,48 @@
+@import '~/styles/utils/custom-media';
+
+.rule {
+  display: flex;
+  align-items: center;
+  padding: 6px 15px;
+  @media (--breakpoint-not-small) {
+    padding: 10px 40px;
+  }
+}
+
+.left {
+  width: 40px;
+  padding-right: 15px;
+  color: var(--color-text-secondary);
+  opacity: 0.4;
+}
+
+.a {
+  display: flex;
+  align-items: center;
+  font-size: 1em;
+  opacity: 0.8;
+}
+
+.b {
+  flex-grow: 1;
+  padding: 10px 0;
+  font-family: 'Roboto Mono', Menlo, monospace;
+  font-size: 1em;
+  @media (--breakpoint-not-small) {
+    font-size: 1em;
+  }
+}
+
+.type {
+  width: 110px;
+  color: #3b5f76;
+}
+
+.size {
+  width: 110px;
+}
+
+.payloadAndSize {
+  display: flex;
+  align-items: center;
+}

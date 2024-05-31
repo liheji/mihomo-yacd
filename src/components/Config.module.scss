@@ -1,0 +1,43 @@
+@import '~/styles/utils/custom-media';
+
+.root,
+.section {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(49%, 1fr));
+  max-width: 900px;
+  gap: 5px;
+  @media (--breakpoint-not-small) {
+    gap: 15px;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  }
+}
+
+.root,
+.section {
+  padding: 6px 15px 10px;
+  @media (--breakpoint-not-small) {
+    padding: 10px 40px 15px;
+  }
+}
+
+.wrapSwitch {
+  height: 40px;
+  display: flex;
+  align-items: center;
+}
+
+.sep {
+  max-width: 900px;
+  padding: 0 15px;
+  @media (--breakpoint-not-small) {
+    padding: 0 40px;
+  }
+  > div {
+    border-top: 1px dashed #373737;
+  }
+}
+
+.label {
+  padding: 15px 0;
+  font-size: small;
+}

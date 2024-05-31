@@ -1,0 +1,42 @@
+.root {
+  position: relative;
+  padding: 10px 0;
+  input {
+    -webkit-appearance: none;
+    background-color: transparent;
+    background-image: none;
+    border: none;
+    border-radius: 0;
+    border-bottom: 1px solid var(--color-input-border);
+    box-sizing: border-box;
+    color: inherit;
+    display: inline-block;
+    font-size: inherit;
+    height: 40px;
+    outline: none;
+    padding: 0 4px;
+    width: 100%;
+    &:focus {
+      border-color: var(--color-focus-blue);
+    }
+  }
+
+  label {
+    position: absolute;
+    left: 5px;
+    bottom: 22px;
+    transition: transform 150ms ease-in-out;
+    transform-origin: 0 0;
+    font-size: 0.9em;
+    &.floatAbove {
+      transform: scale(0.75) translateY(-25px);
+    }
+  }
+
+  input {
+    &:focus + label {
+      color: var(--color-focus-blue);
+      transform: scale(0.75) translateY(-25px);
+    }
+  }
+}

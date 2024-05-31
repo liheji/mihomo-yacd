@@ -1,0 +1,15 @@
+.TrafficChart {
+  color: var(--color-text);
+  background-color: var(--color-bg-chart);
+  height: 23vh !important;
+  @media only screen and (min-width: 600px) {
+    height: 25vh !important;
+  }
+  @media only screen and (min-width: 768px) {
+    height: 27vh !important;
+  }
+  @media only screen and (min-width: 1200px) {
+    height: 35vh !important;
+  }
+  box-shadow: 0px 1px 5px rgba(0, 0, 0, 0.1);
+}

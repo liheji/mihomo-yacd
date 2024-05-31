@@ -1,0 +1,37 @@
+.root {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  overflow: hidden;
+
+  padding: 20px;
+  background: var(--color-background);
+  color: var(--color-text);
+  text-align: center;
+}
+
+.yacd {
+  color: #2a477a;
+  opacity: 0.6;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 40px;
+}
+
+.link {
+  display: inline-flex;
+  align-items: center;
+
+  color: var(--color-text-secondary);
+  &:hover,
+  &:active {
+    color: var(--color-focus-blue);
+  }
+
+  svg {
+    margin-right: 5px;
+  }
+}
