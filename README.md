@@ -29,6 +29,7 @@ docker pull yilee01/mihomo-yacd
 docker run -d \
   --name clash \
   -v ./config:/root/.config/mihomo \
+  -p 7890:7890 \
   -p 8080:8080 \
   yilee01/mihomo-yacd:latest
 ```
@@ -42,12 +43,14 @@ services:
     container_name: mihomo
     image: yilee01/mihomo-yacd:latest
     ports:
-      - 5423:8080
+      - 7890:7890
+      - 8080:8080
     volumes:
       - ./config:/root/.config/mihomo
     restart: on-failure:3
 ```
 
+-   7890为代理端口
 -   8080为管理界面端口
 
 +   注意勾选允许局域网连接
