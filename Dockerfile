@@ -5,7 +5,7 @@ WORKDIR /app
 RUN npm i -g pnpm
 
 COPY . .
-RUN pnpm i
+RUN pnpm set strict-ssl false && pnpm i
 
 RUN pnpm build \
   # remove source maps - people like small image
